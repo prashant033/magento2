@@ -18,7 +18,7 @@ class Hello extends Template
     }
 
     public function getPostCollection(){
-        echo "git push";
+      //  echo "git push";
         $post = $this->_postFactory->create();
         return $post->getCollection();
     }
