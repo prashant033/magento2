@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+
+    <route url="/V1/sapStock/:stockId" method="GET">
+        <service class="BowersWilkins\SAPProductInfo\Api\SapStockRepositoryInterface" method="getById"/>
+        <resources>
+            <resource ref="BowersWilkins_SAPProductInfo::sap_product_info"/>
+        </resources>
+    </route>
+    <route url="/V1/sapStock/search" method="GET">
+        <service class="BowersWilkins\SAPProductInfo\Api\SapStockRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="BowersWilkins_SAPProductInfo::sap_product_info"/>
+        </resources>
+    </route>
+    <route url="/V1/sapStock" method="POST">
+        <service class="BowersWilkins\SAPProductInfo\Api\SapStockRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="BowersWilkins_SAPProductInfo::sap_product_info"/>
+        </resources>
+    </route>
+    <route url="/V1/sapStock/:id" method="PUT">
+        <service class="BowersWilkins\SAPProductInfo\Api\SapStockRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="BowersWilkins_SAPProductInfo::sap_product_info"/>
+        </resources>
+    </route>
+    <route url="/V1/sapStock/:stockId" method="DELETE">
+        <service class="BowersWilkins\SAPProductInfo\Api\SapStockRepositoryInterface" method="deleteById"/>
+        <resources>
+            <resource ref="BowersWilkins_SAPProductInfo::sap_product_info"/>
+        </resources>
+    </route>
+</routes>

@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="BowersWilkins\SAPProductInfo\Api\Data\SapStockSearchResultsInterface" type="Magento\Framework\Api\SearchResults" />
+    <preference for="BowersWilkins\SAPProductInfo\Api\Data\SapStockInterface" type="BowersWilkins\SAPProductInfo\Model\SapStock" />
+    <preference for="BowersWilkins\SAPProductInfo\Api\SapStockRepositoryInterface" type="BowersWilkins\SAPProductInfo\Model\SapStockRepository" />
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="sap_stock_listing_data_source" xsi:type="string">BowersWilkins\SAPProductInfo\Model\ResourceModel\SapStock\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="BowersWilkins\SAPProductInfo\Model\ResourceModel\SapStock\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">sap_stock_data</argument>
+            <argument name="eventPrefix" xsi:type="string">sap_stock_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">stock_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">BowersWilkins\SAPProductInfo\Model\ResourceModel\SapStock</argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\EntityManager\MetadataPool">
+        <arguments>
+            <argument name="metadata" xsi:type="array">
+                <item name="BowersWilkins\SAPProductInfo\Api\Data\SapStockInterface" xsi:type="array">
+                    <item name="entityTableName" xsi:type="string">sap_stock_data</item>
+                    <item name="identifierField" xsi:type="string">sap_id</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+
+
+    <virtualType name="BowersWilkins\SAPProductInfo\Model\Api\SearchCriteria\SapStockCollectionProcessor" type="Magento\Framework\Api\SearchCriteria\CollectionProcessor">
+        <arguments>
+            <argument name="processors" xsi:type="array">
+                <item name="filters" xsi:type="object">Magento\Cms\Model\Api\SearchCriteria\CollectionProcessor\BlockFilterProcessor</item>
+                <item name="sorting" xsi:type="object">Magento\Framework\Api\SearchCriteria\CollectionProcessor\SortingProcessor</item>
+                <item name="pagination" xsi:type="object">Magento\Framework\Api\SearchCriteria\CollectionProcessor\PaginationProcessor</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="BowersWilkins\SAPProductInfo\Model\SapStockRepository">
+        <arguments>
+            <argument name="collectionProcessor" xsi:type="object">BowersWilkins\SAPProductInfo\Model\Api\SearchCriteria\SapStockCollectionProcessor</argument>
+        </arguments>
+    </type>
+
+</config>

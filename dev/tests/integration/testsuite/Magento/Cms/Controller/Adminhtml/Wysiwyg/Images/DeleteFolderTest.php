@@ -9,9 +9,9 @@ namespace Magento\Cms\Controller\Adminhtml\Wysiwyg\Images;
 use Magento\Framework\App\Filesystem\DirectoryList;
 
 /**
- * Tests Magento\Cms\Controller\Adminhtml\Wysiwyg\Images\DeleteFolder.
+ * Test for \Magento\Cms\Controller\Adminhtml\Wysiwyg\Images\DeleteFolder class.
  */
-class DeleteFolderTest extends \PHPUnit_Framework_TestCase
+class DeleteFolderTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @var \Magento\Cms\Controller\Adminhtml\Wysiwyg\Images\DeleteFolder
@@ -48,8 +48,8 @@ class DeleteFolderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Execute method with correct directory path to check that directories under WYSIWYG media directory can
-     * be removed.
+     * Execute method with correct directory path to check that directories under WYSIWYG media directory
+     * can be removed.
      *
      * @return void
      */
@@ -63,7 +63,9 @@ class DeleteFolderTest extends \PHPUnit_Framework_TestCase
         $this->model->execute();
         $this->assertFalse(
             $this->mediaDirectory->isExist(
-                $this->mediaDirectory->getRelativePath($this->fullDirectoryPath . $directoryName)
+                $this->mediaDirectory->getRelativePath(
+                    $this->fullDirectoryPath . $directoryName
+                )
             )
         );
     }

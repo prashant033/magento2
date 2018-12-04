@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2017 Amasty (https://www.amasty.com)
+ * @package Amasty_ProductAttachment
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="BowersWilkins_SAPProductInfo::sap_product_info" title="SAP Product Info" module="BowersWilkins_SAPProductInfo" sortOrder="140" parent="Magento_Catalog::catalog" resource="BowersWilkins_SAPProductInfo::sap_product_info"/>
+        <add id="BowersWilkins_SAPProductInfo::sap_product_info_stock" title="SAP Product Info Stock" module="BowersWilkins_SAPProductInfo" sortOrder="10" parent="BowersWilkins_SAPProductInfo::sap_product_info" action="sapdata/stock/index" resource="BowersWilkins_SAPProductInfo::sap_product_info_stock"/>
+    </menu>
+</config>

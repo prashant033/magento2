@@ -1,6 +1,5 @@
 <?php
 /**
- *
  * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
@@ -17,6 +16,29 @@ include __DIR__
 
 /** @var Registry $registry */
 $registry = Bootstrap::getObjectManager()->get(Registry::class);
+
+//Removing addresses
+$registry->unregister('isSecureArea');
+$registry->register('isSecureArea', true);
+/** @var Address $customerAddress */
+$customerAddress = Bootstrap::getObjectManager()->create(Address::class);
+$customerAddress->load(1);
+if ($customerAddress->getId()) {
+    $customerAddress->delete();
+}
+$registry->unregister('isSecureArea');
+$registry->register('isSecureArea', false);
+//Second address
+$registry->unregister('isSecureArea');
+$registry->register('isSecureArea', true);
+/** @var Address $customerAddress */
+$customerAddress = Bootstrap::getObjectManager()->create(Address::class);
+$customerAddress->load(2);
+if ($customerAddress->getId()) {
+    $customerAddress->delete();
+}
+$registry->unregister('isSecureArea');
+$registry->register('isSecureArea', false);
 
 //Removing customers.
 $registry->unregister('isSecureArea');
