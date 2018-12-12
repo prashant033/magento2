@@ -1,0 +1,17 @@
+CALL age_gate_yes [] skip=false breakpoint=false
+GET_WEB_VALUE HALT store_name LOCATOR total_wine_main_site_nav.text.global_store_v1 NODE TEXT  FALSE _ [] skip=false breakpoint=false
+SET_VAR HALT Static sku "110892750-1" [] skip=false breakpoint=false
+SET_VAR HALT Static qty "1" [] skip=false breakpoint=false
+CALL search_product_and_add_cart_desktop [] skip=false breakpoint=false
+CALL verify_item_add_to_cart_v1 [] skip=false breakpoint=false
+SET_VAR HALT Static state "California " [] skip=false breakpoint=false
+CALL mobile_change_state_by_var_state_v1 [] skip=false breakpoint=false
+GET_WEB_VALUE HALT item_number LOCATOR total_wine_main.div.mini_cart_item_count_V1 NODE TEXT  FALSE _ [] skip=false breakpoint=false
+COMPARE HALT 1 1 NUMBER:'@item_number' = NUMBER:'1' [] skip=false breakpoint=false
+GET_WEB_VALUE HALT state_name LOCATOR total_wine_main_site_nav.text.global_store_v1 NODE TEXT  FALSE _ [] skip=false breakpoint=false
+COMPARE HALT 1 1 TEXT:'@state_name ' = TEXT:'@state' [] skip=false breakpoint=false
+COMPARE HALT 1 1 TEXT:'@store_name' != TEXT:'@state_name' [] skip=false breakpoint=false
+
+
+
+
