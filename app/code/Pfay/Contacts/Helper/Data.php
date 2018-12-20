@@ -8,4 +8,8 @@ class Data extends \Magento\Catalog\Helper\Data
      //   die('rewrite helper');
         return $this->_coreRegistry->registry('current_product');
     }
+    public function RandomFunc()
+       {
+               echo "call helper function to controllers";
+       }
 }

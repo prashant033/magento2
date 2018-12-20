@@ -9,5 +9,9 @@ class View extends \Magento\Framework\App\Action\Action
     	echo "<br/>";
        // die('Third Controller actions');
         $this->_view->renderLayout();
+         $this->_objectManager->create('Pfay\Contacts\Helper\Data')->RandomFunc();
+         echo "helper Data";
+           //$this->helper->RandomFunc();
     }
+   
 }
