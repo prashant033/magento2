@@ -17,7 +17,6 @@
             <item name="save" xsi:type="string">Pfay\Contacts\Block\Adminhtml\Contact\Edit\SaveButton</item>
         </item>
     </argument>
-
     <dataSource name="contacts_form_data_source">
         <argument name="dataProvider" xsi:type="configurableObject">
             <argument name="class" xsi:type="string">Pfay\Contacts\Model\Contact\DataProvider</argument>
