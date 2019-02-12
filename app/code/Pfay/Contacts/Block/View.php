@@ -24,7 +24,7 @@ class View extends Template
 
     public function getImageUrl(){
 
-        $url = $this->getViewFileUrl('Pfay_Contacts::images/download.png');
+        $url = $this->getViewFileUrl('Pfay_Contacts::images/jull_2.jpg');
         return $url;
     }
 }

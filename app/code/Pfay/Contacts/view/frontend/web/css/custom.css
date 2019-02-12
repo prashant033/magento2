@@ -4,3 +4,29 @@
 	color: green;
 	background-color: green;
 }
+.heading{
+	    text-align: center;
+	    font-style: oblique;
+	    font-family: -webkit-pictograph;
+	    font-weight: 600;
+	    text-shadow: 1px 1px 2px pink;
+}
+.wordrap
+{
+	width: 50%;
+    line-height: 25px;
+    text-decoration: dashed;
+    font-style: italic;
+    font-family: auto;
+    font-size: 20px;
+    text-align: justify;
+    position: absolute;
+    z-index: 9999;
+    font-weight: 600;
+}
+.sidebar{
+	/*display: block;*/
+    position: relative;
+    float: right !important;
+    border: 25px saddlebrown;
+}
