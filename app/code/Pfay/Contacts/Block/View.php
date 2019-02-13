@@ -21,4 +21,10 @@ class View extends Template
         $post = $this->_postFactory->create();
         return $post->getCollection();
     }
+
+    public function getImageUrl(){
+
+        $url = $this->getViewFileUrl('Pfay_Contacts::images/jull_2.jpg');
+        return $url;
+    }
 }
