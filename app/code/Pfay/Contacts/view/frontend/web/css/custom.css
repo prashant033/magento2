@@ -109,3 +109,11 @@ strong.product-item-name {
     text-align: justify;
     text-align: center;
 }
+/*
+.product-reviews-summary.short {
+    text-align: center;
+    margin-left: 48px;
+}*/
+.product-reviews-summary.short {
+    margin: 0px 0px 0px 37px;
+}

@@ -8,7 +8,7 @@ $helper = $objectManager->get('Prince\PincodeChecker\Helper\Data');
             <h1><?php echo __("Pincode Status"); ?></h1>
             <div id="pincode-avail"></div>
         </div>
-        <div class="pincode-field">
+        <div class="pincode-field-no">
             <span class="pincode-home-title">Delivery to:</span>
             <input type="text" id="pincode-home" name="pincode" <?php if($helper->getIsCheckonAddtoCart()): ?> class="required-entry" <?php endif;?> placeholder="<?php echo __('Enter Pincode'); ?>"/>
             <input type="button" title="<?php echo __('Check Pincode'); ?>" id="pincode-check-home" class="action primary" value="<?php echo __('Check'); ?>" />
