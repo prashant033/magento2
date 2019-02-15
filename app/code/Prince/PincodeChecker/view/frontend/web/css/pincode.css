@@ -11,3 +11,11 @@
 #pincode {
     width: 75%;
 }
+
+/*homepage*/
+#pincode-check-home {
+    padding: 5px 10px;
+}
+#pincode-home {
+    width: 30%;
+}

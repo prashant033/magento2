@@ -39,16 +39,18 @@ class Index extends \Magento\Framework\App\Action\Action
     public function execute()
     {
         if($this->getRequest()->isAjax()){
-
             $pincode = $this->getRequest()->getParam('p', false);
-            $id = $this->getRequest()->getParam('id', false);
+            $productId = $this->getRequest()->getParam('id', false);
             $pincodeStatus = $this->helper->getPincodeStatus($pincode);
-            $productStatus = $this->helper->getProductPincodeStatus($id, $pincode);
-
-            if($productStatus){
-                $message = $this->helper->getMessage(false, $pincode);
-            }else{
-                $message = $this->helper->getMessage($pincodeStatus, $pincode);
+            if($productId) {  //product case
+                $productStatus = $this->helper->getProductPincodeStatus($productId, $pincode);
+                if ($productStatus) {
+                    $message = $this->helper->getMessage(false, $pincode,$productId);
+                } else {
+                    $message = $this->helper->getMessage($pincodeStatus, $pincode,$productId);
+                }
+            }else{ //all case
+                $message = $this->helper->getMessage($pincodeStatus, $pincode, $productId);
             }
     
             $resultJson = $this->resultPageFactory->create();

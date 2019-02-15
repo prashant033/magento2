@@ -1,0 +1,67 @@
+
+<?php
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$helper = $objectManager->get('Prince\PincodeChecker\Helper\Data');
+?>
+    <div class="pincode-check">
+        <div id="pincode-status">
+            <h1><?php echo __("Pincode Status"); ?></h1>
+            <div id="pincode-avail"></div>
+        </div>
+        <div class="pincode-field">
+            <span>Delivery to:</span>
+            <input type="text" id="pincode-home" name="pincode" <?php if($helper->getIsCheckonAddtoCart()): ?> class="required-entry" <?php endif;?> placeholder="<?php echo __('Enter Pincode'); ?>"/>
+            <input type="button" title="<?php echo __('Check Pincode'); ?>" id="pincode-check-home" class="action primary" value="<?php echo __('Check'); ?>" />
+        </div>
+    </div>
+
+    <?php
+    //Get controller url
+    $url = $this->getUrl('pincodechecker');
+    ?>
+
+    <script type="text/javascript">
+        require(['jquery', 'Magento_Ui/js/modal/modal'], function ($, modal) {
+
+            var options = {
+                type: 'popup',
+                responsive: true,
+                innerScroll: true,
+                buttons: [{
+                    text: $.mage.__('Continue'),
+                    class: '',
+                    click: function () {
+                        this.closeModal();
+                    }
+                }]
+            };
+
+            var popup = modal(options, $('#pincode-status'));
+
+            $(document).on('click','#pincode-check-home', function(){
+                var pincode = $('#pincode-home').val();
+                if(pincode == "")
+                {
+                    alert("Please Enter Pincode");
+                    return false;
+                }
+                $.ajax({
+                    url: '<?php echo $url ?>',
+                    async:false,
+                    showLoader: true,
+                    data: {id:'',p:pincode},
+                    success: function(result){
+                        $('#pincode-avail').html(result);
+                        $('#pincode-status').modal('openModal');
+                    }
+                });
+            });
+
+            $('#pincode-home').keypress(function(e){
+                if(e.which == 13){
+                    e.preventDefault();
+                    $('#pincode-check-home').click();
+                }
+            });
+        });
+    </script>
