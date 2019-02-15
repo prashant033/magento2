@@ -24,7 +24,9 @@ class View extends Template
 
     public function getImageUrl(){
 
+
         $url = $this->getViewFileUrl('Pfay_Contacts::images/juul-pods_limited_edition.jpg');
+       // $url = $this->getViewFileUrl('Pfay_Contacts::images/jull_2.jpg');
         return $url;
     }
 }

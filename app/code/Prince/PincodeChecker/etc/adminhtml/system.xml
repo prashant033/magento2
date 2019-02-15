@@ -27,6 +27,7 @@
                     <label>Fail Message</label>
                     <validate>required-entry</validate>
                 </field>
+<<<<<<< HEAD
 
                 <field id="successmessage_product_level" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
                     <label>Success Message Product Level</label>
@@ -40,3 +41,9 @@
         </section>
     </system>
 </config>
+=======
+            </group>
+        </section>
+    </system>
+</config>
+>>>>>>> 60fcc5100fa05ceb9f160d787b35be1a2c05e17e

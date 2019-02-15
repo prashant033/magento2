@@ -5,6 +5,7 @@
             <general>
                 <active>1</active>
                 <checkaddtocart>0</checkaddtocart>
+<<<<<<< HEAD
                 <successmessage>Pincode is Available For Delivery</successmessage>
                 <failmessage>Pincode is Not Available For Delivery</failmessage>
                 <successmessage_product_level>Pincode is Available For This Product</successmessage_product_level>
@@ -13,3 +14,11 @@
         </pincode>
     </default>
 </config>
+=======
+                <successmessage>Pincode is Available For This Product</successmessage>
+                <failmessage>Pincode is Not Available For This Product</failmessage>
+            </general>
+        </pincode>
+    </default>
+</config>
+>>>>>>> 60fcc5100fa05ceb9f160d787b35be1a2c05e17e

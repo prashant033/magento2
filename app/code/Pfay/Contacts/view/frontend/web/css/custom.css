@@ -13,6 +13,7 @@
 }
 .wordrap
 {
+	width: 50%;
     line-height: 25px;
     text-decoration: dashed;
     font-style: italic;
@@ -94,4 +95,13 @@ body{
     font-size: 600;
     font-weight: 600;
     font-style: unset;
+    position: absolute;
+    z-index: 9999;
+    font-weight: 600;
+}
+.sidebar{
+	/*display: block;*/
+    position: relative;
+    float: right !important;
+    border: 25px saddlebrown;
 }

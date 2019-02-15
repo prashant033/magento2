@@ -78,6 +78,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     public function getProductPincodeStatus($id, $pincode)
     {
         $product = $this->product->load($id);
+
        // print_r($product);exit;
         $pincodes = $product->getData('pincode');
         $pincodeArr = explode(',', $pincodes);
@@ -104,6 +105,14 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
             $message = "<h3>".$this->getSuccessMessage($productId)."</h3>";
         }else{
             $message = "<h3 style='color:red'>".$this->getFailMessage($productId)."</h3>";
+    }
+    public function getMessage($status, $pincode)
+    {
+        if($status){
+            $message = "<h3>".$this->getSuccessMessage()."</h3>";
+        }else{
+            $message = "<h3 style='color:red'>".$this->getFailMessage()."</h3>";
+
         }
 
         return $message;
@@ -137,6 +146,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
 
     /**
      * Get success message config value
+<<<<<<< HEAD
      * @param $productId
      * @return mixed
      */
@@ -148,10 +158,17 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
             return $this->scopeConfig->getValue('pincode/general/successmessage', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
         }
 
+=======
+     */
+    public function getSuccessMessage()
+    {
+        return $this->scopeConfig->getValue('pincode/general/successmessage', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+>>>>>>> 60fcc5100fa05ceb9f160d787b35be1a2c05e17e
     }
 
     /**
      * Get fail message config value
+<<<<<<< HEAD
      * @param $productId
      * @return mixed
      */
@@ -164,3 +181,11 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
         }
     }
 }
+=======
+     */
+    public function getFailMessage()
+    {
+        return $this->scopeConfig->getValue('pincode/general/failmessage', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+    }
+}
+>>>>>>> 60fcc5100fa05ceb9f160d787b35be1a2c05e17e

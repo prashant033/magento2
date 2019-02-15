@@ -9,7 +9,6 @@
     <head>
         <title>Contact Us</title>
          <css src="Pfay_Contacts::css/custom.css" />
-         
     </head>
     <body>
         <referenceContainer name="content">

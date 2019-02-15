@@ -51,6 +51,16 @@ class Index extends \Magento\Framework\App\Action\Action
                 }
             }else{ //all case
                 $message = $this->helper->getMessage($pincodeStatus, $pincode, $productId);
+
+            $pincode = $this->getRequest()->getParam('p', false);
+            $id = $this->getRequest()->getParam('id', false);
+            $pincodeStatus = $this->helper->getPincodeStatus($pincode);
+            $productStatus = $this->helper->getProductPincodeStatus($id, $pincode);
+
+            if($productStatus){
+                $message = $this->helper->getMessage(false, $pincode);
+            }else{
+                $message = $this->helper->getMessage($pincodeStatus, $pincode);
             }
     
             $resultJson = $this->resultPageFactory->create();
@@ -61,3 +71,6 @@ class Index extends \Magento\Framework\App\Action\Action
         return false;
     }
 }
+
+}
+
