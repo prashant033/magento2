@@ -94,4 +94,18 @@ body{
     font-size: 600;
     font-weight: 600;
     font-style: unset;
+    text-decoration: underline;
+}
+
+strong.product-item-name {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: underline;
+    /* border-bottom: 2px solid black; */
+}
+.price-box.price-final_price {
+    text-align: justify;
+    text-align: center;
 }

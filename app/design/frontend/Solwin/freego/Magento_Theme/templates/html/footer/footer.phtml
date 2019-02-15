@@ -120,6 +120,9 @@ $newsletter_show = $helper->getShowfooternewsletter();
             <h1>testing the footers</h1>
             <div class="cp-footer-main">
                 <div class="cp-fblock">
+                    <div>
+                        <?php echo $block->getLayout()->createBlock("Magento\Framework\View\Element\Template")->setTemplate("Prince_PincodeChecker::pincode_checker.phtml")->toHtml(); ?>
+                    </div>
                     <div class="cp-ftitle">
                         <h3>
                             <?php echo $newsletter_title; ?>
@@ -128,6 +131,7 @@ $newsletter_show = $helper->getShowfooternewsletter();
                             <?php echo $newsletter_text; ?>
                         </p>
                     </div>
+                    
                     <div class="cp-fcontent">
                         <?php echo $this->getChildHtml('footer.newsletter'); ?>
                     </div>

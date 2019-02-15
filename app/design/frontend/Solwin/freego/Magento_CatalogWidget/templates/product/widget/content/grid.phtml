@@ -111,12 +111,17 @@
                                             <?php echo $block->escapeHtml($_item->getName()) ?>
                                         </a>
                                     </strong>
+                                    <div class="review_width">
+                                    <?php if ($templateType): ?>
+                                        <?php echo $block->getReviewsSummaryHtml($_item) ?>
+                                        <?php endif; ?>
+                                    </div>
                                     <?php
                                     echo $block->getProductPriceHtml($_item, $type);
                                     ?>
 
                                     <?php if ($templateType): ?>
-                                        <?php echo $block->getReviewsSummaryHtml($_item, $templateType) ?>
+                                        <?php //echo $block->getReviewsSummaryHtml($_item, $templateType) ?>
                                     <?php endif; ?>
                                 </div>
                             </div>
