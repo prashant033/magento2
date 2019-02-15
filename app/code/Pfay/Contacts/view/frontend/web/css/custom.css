@@ -22,8 +22,76 @@
     font-weight: 600;
 }
 .sidebar{
-	/*display: block;*/
+	 display: block;
     position: relative;
-    float: right !important;
-    border: 25px saddlebrown;
+    /* float: right !important; */
+    border: 1px black;
+    margin: -29px -5px -2px 0px;
+}
+#top_rated{
+    border-top-style: double;
+    border-bottom-style: double;
+    line-height: inherit;
+    display: inline-block;
+    margin: 20px;
+    font-size: 26px;
+    text-align: center;
+    /* position: relative; */
+    border-top: 1px solid #3a3a3a;
+    border-bottom: 1px solid #3a3a3a;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 11px 15px;
+    margin: 20px !important;
+    text-align: center;
+    font-family: serif;
+    background: #f2703e;
+    border-style: dashed;
+}
+body{
+    background: url('../images/final.png')top center;
+    background: #f2f2f2;
+}
+    .first-row
+    {
+    font-size: 16px;
+    font-weight: bold;
+    font-family: arial;
+    font-style: italic;
+    line-height: 4px;
+
+    }
+     .second-row
+    {
+    font-size: 16px;
+    font-weight: bold;
+    font-family: arial;
+    font-style: italic;
+    line-height: 4px;
+
+    }
+     .third-row
+    {
+    font-size: 16px;
+    font-weight: bold;
+    font-family: arial;
+    font-style: italic;
+    line-height: 4px;
+
+    }
+    .juul_product
+    {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    border-style: 6px double;
+    border-style: double;
+    background: black;
+    color: white;
+    word-spacing: 0em
+    }
+    .grid-title {
+    font-size: 600;
+    font-weight: 600;
+    font-style: unset;
 }

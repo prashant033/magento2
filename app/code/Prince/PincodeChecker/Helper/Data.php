@@ -78,6 +78,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     public function getProductPincodeStatus($id, $pincode)
     {
         $product = $this->product->load($id);
+       // print_r($product);exit;
         $pincodes = $product->getData('pincode');
         $pincodeArr = explode(',', $pincodes);
 
@@ -92,13 +93,17 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
 
     /**
      * Get pincode status message
+     * @param $status
+     * @param $pincode
+     * @param $productId
+     * @return string
      */
-    public function getMessage($status, $pincode)
+    public function getMessage($status, $pincode, $productId)
     {
         if($status){
-            $message = "<h3>".$this->getSuccessMessage()."</h3>";
+            $message = "<h3>".$this->getSuccessMessage($productId)."</h3>";
         }else{
-            $message = "<h3 style='color:red'>".$this->getFailMessage()."</h3>";
+            $message = "<h3 style='color:red'>".$this->getFailMessage($productId)."</h3>";
         }
 
         return $message;
@@ -132,17 +137,30 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
 
     /**
      * Get success message config value
+     * @param $productId
+     * @return mixed
      */
-    public function getSuccessMessage()
+    public function getSuccessMessage($productId)
     {
-        return $this->scopeConfig->getValue('pincode/general/successmessage', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+        if($productId){
+            return $this->scopeConfig->getValue('pincode/general/successmessage_product_level', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+        }else {
+            return $this->scopeConfig->getValue('pincode/general/successmessage', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+        }
+
     }
 
     /**
      * Get fail message config value
+     * @param $productId
+     * @return mixed
      */
-    public function getFailMessage()
+    public function getFailMessage($productId)
     {
-        return $this->scopeConfig->getValue('pincode/general/failmessage', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+        if($productId){
+           return $this->scopeConfig->getValue('pincode/general/failmessage_product_level', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+        }else{
+            return $this->scopeConfig->getValue('pincode/general/failmessage', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+        }
     }
 }

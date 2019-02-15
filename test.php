@@ -35,3 +35,13 @@ print_r($sessions->getData());exit;
 echo "test custom script";
 
 ?>
+
+
+<p>{{widget type="Magento\Cms\Block\Widget\Block" template="widget/static_block/default.phtml" block_id="home_banner"}} 
+{{block class="Pfay\Contacts\Block\View" template="Pfay_Contacts::hello.phtml"}} 
+{{widget type="Magento\Cms\Block\Widget\Block" template="widget/static_block/default.phtml" block_id="9"}}
+{{widget type="Magento\CatalogWidget\Block\Product\ProductsList" title="Wines of 2019" show_pager="0" products_per_page="5" products_count="10" template="product/widget/content/grid.phtml" conditions_encoded="^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`all`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`category_ids`,`operator`:`==`,`value`:`7`^]^]" page_var_name="pwxyld"}} 
+{{widget type="Magento\CatalogWidget\Block\Product\ProductsList" display_type="new_products" show_pager="0" products_count="5" template="product/widget/content/grid.phtml" title="New Arrivals" conditions_encoded="^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`all`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`category_ids`,`operator`:`==`,`value`:`3`^]^]"}} 
+{{widget type="Magento\CatalogWidget\Block\Product\ProductsList" title="Featured Wines" show_pager="0" products_count="4" template="product/widget/content/grid.phtml" conditions_encoded="^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`all`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`country_of_manufacture`,`operator`:`==`,`value`:`IN`^]^]"}} {{widget type="Magento\Cms\Block\Widget\Block" template="widget/static_block/default.phtml" block_id="home_blogs"}} 
+{{widget type="Magento\Cms\Block\Widget\Block" template="widget/static_block/default.phtml" block_id="home_advertisement1"}} 
+{{widget type="Magento\Cms\Block\Widget\Block" template="widget/static_block/default.phtml" block_id="home_brands"}} </p>

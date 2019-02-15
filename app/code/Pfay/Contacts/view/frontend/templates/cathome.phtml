@@ -1,0 +1,45 @@
+<head>
+	
+</head>
+<h2 class="block-title-main" id="top_rated">Top Rated Catogaries</h2>
+<table>
+  <tr>
+  	<td class="first-row">
+  		
+		<?php $categories = $block->getCategoryCollection(); 
+			foreach ($categories as $category) {
+			   
+			        echo $category->getName()."|" ; 
+				} ?>
+  	
+  
+		</td>
+  </tr>
+  <tr>
+   <td class="second-row">
+   	<section>
+   		<?php  $categories = $block->getCategoryCollection(true, false, 'name', false);
+	foreach ($categories as $category) {    
+	    echo $category->getName()."|";
+	}
+	?>
+   	</section>
+   		 
+   </td>
+
+    
+  </tr>
+  <tr>
+  	<td class="third-row">
+  		<section>
+  			<?php $categories = $block->getStoreCategories(); 
+			foreach ($categories as $category) {
+			    
+			          echo $category->getName()."|";
+				} ?>
+  		</section>
+   
+   </td>
+  </tr>
+</table>
+

@@ -17,5 +17,10 @@
                 <container name="form.additional.info" label="Form Additional Info"/>
             </block>
         </referenceContainer>
+         <referenceContainer name="content">
+            <block class="Pfay\Contacts\Block\Cat" name="contactForm" template="Pfay_Contacts::cathome.phtml">
+                <container name="form.additional.info" label="Form Additional Info"/>
+            </block>
+        </referenceContainer>
     </body>
 </page>
