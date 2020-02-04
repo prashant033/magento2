@@ -1,1 +1,1 @@
-<?php  echo homepgae redesign ;?>
+<?php  echo homepgae redesign initail ;?>
